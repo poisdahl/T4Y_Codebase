@@ -1,0 +1,16 @@
+org.restlet.ext.atom
+org.restlet.ext.crypto
+org.restlet.ext.gson
+org.restlet.ext.html
+org.restlet.ext.httpclient
+org.restlet.ext.jaas
+org.restlet.ext.jackson
+org.restlet.ext.jaxrs
+org.restlet.ext.json
+org.restlet.ext.jsslutils
+org.restlet.ext.nio
+org.restlet.ext.odata
+org.restlet.ext.rdf
+org.restlet.ext.sip
+org.restlet.ext.thymeleaf
+org.restlet.ext.xml

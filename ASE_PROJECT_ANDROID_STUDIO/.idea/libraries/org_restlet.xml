@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="org.restlet">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mobile/libs/restlet-android-2.3.5/lib/org.restlet.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
