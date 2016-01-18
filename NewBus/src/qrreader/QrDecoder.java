@@ -26,8 +26,7 @@ public class QrDecoder implements IQrDecoder {
 		try {
 			qrCodeResult = new MultiFormatReader().decode(binaryBitmap, hintMap);
 		} catch (NotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return "Error";
 		}
 		return qrCodeResult.getText();
 	}
