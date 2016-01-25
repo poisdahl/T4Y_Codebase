@@ -41,10 +41,11 @@ public class WebcamViewer extends JFrame implements Runnable, ThreadFactory {
 
 	public static boolean checkValidity(String nameToCheck, String ticketToCheck) {
 		System.out.println("[Main] Checking ticket: " + nameToCheck + ", " + ticketToCheck);
-		URI uri = URI.create("http://test-score-1098.appspot.com/rest/guestbook/");
+		URI uri = URI.create("http://score-1042.appspot.com/rest/users");
 		ClientResource resource = new ClientResource(uri);
 		try {
 			String rawAnswer = resource.get().getText();
+			System.out.println("[Main] Data " + rawAnswer);
 			InputStream is = new ByteArrayInputStream(rawAnswer.getBytes("UTF-8"));
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -57,7 +58,8 @@ public class WebcamViewer extends JFrame implements Runnable, ThreadFactory {
 				Element elem = (Element) nodes.item(i);
 				String name = elem.getElementsByTagName("name").item(0).getFirstChild().getTextContent();
 				String ticket = elem.getElementsByTagName("ticket").item(0).getFirstChild().getTextContent();
-				if (name != nameToCheck)
+				System.out.println("Trying user " + name + " // " + ticket);
+				if (!name.equals(nameToCheck))
 					continue;
 				return ticket.startsWith(ticketToCheck);
 			}
