@@ -54,6 +54,15 @@
     <activity android:name="de.tum.score.transport4you.mobile.presentation.presentationmanager.impl.ETicketListScreen" android:screenOrientation="portrait"></activity>
     <activity android:name="de.tum.score.transport4you.mobile.presentation.presentationmanager.impl.SettingsScreen" android:screenOrientation="portrait"></activity>
     <activity android:name="de.tum.score.transport4you.mobile.presentation.presentationmanager.impl.AvailableETicketListScreen" android:screenOrientation="portrait"></activity>
+    <activity
+            android:name="de.tum.score.transport4you.mobile.communication.GenerateQRCodeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="de.tum.score.transport4you.mobile.presentation.presentationmanager.impl.Contents" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+     </activity>
 </application>
 
 <uses-permission android:name="android.permission.INTERNET" /> 

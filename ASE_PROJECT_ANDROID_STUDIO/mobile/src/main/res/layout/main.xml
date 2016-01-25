@@ -36,12 +36,20 @@
         android:layout_height="100px"
         android:text="@string/synchronize"
     />
-    
-    <Button android:id="@+id/btn_startbusscan"
-        android:layout_width="fill_parent"
-        android:layout_height="200px"
-        android:text="@string/startbusscan"
-        android:textSize="30px"
-    />
 
-</LinearLayout>
+    <!--    <Button android:id="@+id/btn_startbusscan"
+            android:layout_width="fill_parent"
+           android:layout_height="200px"
+            android:text="@string/startbusscan"
+            android:textSize="30px"
+        />
+-->
+
+        <Button android:id="@+id/btn_qrcodegen"
+            android:layout_width="fill_parent"
+            android:layout_height="200px"
+            android:text="Generate QR code"
+            android:textSize="30px"
+            />
+
+    </LinearLayout>

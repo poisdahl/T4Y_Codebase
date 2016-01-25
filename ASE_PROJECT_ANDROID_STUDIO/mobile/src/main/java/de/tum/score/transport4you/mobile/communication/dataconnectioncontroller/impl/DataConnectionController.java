@@ -29,6 +29,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 
 import de.tum.score.transport4you.mobile.application.applicationcontroller.IMainApplication;
+import de.tum.score.transport4you.mobile.communication.GenerateQRCodeActivity;
 import de.tum.score.transport4you.mobile.communication.dataconnectioncontroller.IData;
 import de.tum.score.transport4you.mobile.communication.dataconnectioncontroller.error.RESTException;
 import de.tum.score.transport4you.shared.mobilebusweb.data.impl.BlobEnvelope;
@@ -113,6 +114,9 @@ public class DataConnectionController implements IData {
             ByteArrayInputStream byteInputStream = new ByteArrayInputStream(Base64.decode(ticketString.getBytes()));
             ObjectInput in = new ObjectInputStream(byteInputStream);
             BlobEnvelope result = (BlobEnvelope) in.readObject();
+
+            //TODO: SF: Remove this workaround
+            GenerateQRCodeActivity.ticketCode = ticketString;
 
             return result;
         } catch (Exception e) {

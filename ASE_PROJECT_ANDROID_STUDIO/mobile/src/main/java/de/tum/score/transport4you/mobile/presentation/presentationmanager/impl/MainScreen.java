@@ -19,6 +19,7 @@ import android.widget.Button;
 import de.tum.score.transport4you.mobile.R;
 import de.tum.score.transport4you.mobile.application.applicationcontroller.IMainApplication;
 import de.tum.score.transport4you.mobile.application.applicationcontroller.impl.ApplicationSingleton;
+import de.tum.score.transport4you.mobile.communication.GenerateQRCodeActivity;
 import de.tum.score.transport4you.mobile.presentation.presentationmanager.IPresentation;
 import de.tum.score.transport4you.mobile.shared.MobileIntents;
 
@@ -50,11 +51,11 @@ public class MainScreen extends Activity implements IPresentation{
         
         Button showSettingsButton = (Button) findViewById(R.id.btn_settings);        
         showSettingsButton.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-	        	Intent newIntent = new Intent(currentContext, SettingsScreen.class);
-	            startActivity(newIntent);  
-            }
-        });
+			public void onClick(View v) {
+				Intent newIntent = new Intent(currentContext, SettingsScreen.class);
+				startActivity(newIntent);
+			}
+		});
     
         Button showAccountDetailsButton = (Button) findViewById(R.id.btn_accountdetails);        
         showAccountDetailsButton.setOnClickListener(new OnClickListener() {
@@ -79,6 +80,15 @@ public class MainScreen extends Activity implements IPresentation{
 	            startActivity(newIntent);    
             }
         });
+
+
+		Button showQRCodeGen = (Button) findViewById(R.id.btn_qrcodegen);
+		showQRCodeGen.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Intent newIntent = new Intent(currentContext, GenerateQRCodeActivity.class);
+				startActivity(newIntent);
+			}
+		});
         
         synchronizeButton = (Button) findViewById(R.id.btn_synchronize);  
         GUIElements.put("synchronizeButton",synchronizeButton);
@@ -89,14 +99,14 @@ public class MainScreen extends Activity implements IPresentation{
             }
         });
         
-        startBusScanButton = (Button) findViewById(R.id.btn_startbusscan);  
-        GUIElements.put("startBusScanButton",startBusScanButton);
-        startBusScanButton.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-	        	showDialog(busConnection_DIALOG);
-	        	//startBusScanButton.setEnabled(false);
-            }
-        });
+//        startBusScanButton = (Button) findViewById(R.id.btn_startbusscan);
+//        GUIElements.put("startBusScanButton",startBusScanButton);
+//        startBusScanButton.setOnClickListener(new OnClickListener() {
+//            public void onClick(View v) {
+//	        	showDialog(busConnection_DIALOG);
+//	        	//startBusScanButton.setEnabled(false);
+//            }
+//        });
         
     }
 	
